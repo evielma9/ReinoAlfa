@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reino Alfa Taberna | Alitas, Burgers & Beer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --gold: #c5a059;
+            --dark: #0d1110;
+            --light: #f4f4f4;
+            --overlay: rgba(0, 0, 0, 0.8);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, .brand { font-family: 'Cinzel', serif; color: var(--gold); }
+
+        /* --- NAVEGACIÓN --- */
+        nav {
+            background: rgba(13, 17, 16, 0.95);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--gold);
+        }
+
+        .nav-links { display: flex; list-style: none; }
+        .nav-links li { margin-left: 20px; }
+        .nav-links a { color: white; text-decoration: none; font-size: 0.9rem; text-transform: uppercase; transition: 0.3s; }
+        .nav-links a:hover { color: var(--gold); }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(var(--overlay), var(--overlay)), url('TABERNA.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-top: 60px;
+        }
+
+        .hero img { max-width: 250px; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; max-width: 600px; margin-bottom: 30px; }
+
+        /* --- BOTONES --- */
+        .btn {
+            padding: 12px 30px;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: 0.4s;
+            cursor: pointer;
+            background: transparent;
+        }
+
+        .btn:hover { background: var(--gold); color: var(--dark); }
+
+        /* --- INFO BAR (HORARIOS/UBICACIÓN) --- */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            background: #151a19;
+            padding: 40px 10%;
+            text-align: center;
+        }
+
+        .info-card i { font-size: 2rem; color: var(--gold); margin-bottom: 15px; }
+
+        /* --- SECCIÓN MENÚ --- */
+        .menu-section { padding: 60px 5%; text-align: center; }
+        .menu-img-container {
+            max-width: 900px;
+            margin: 0 auto;
+            border: 5px solid #1a1a1a;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.8);
+        }
+        .menu-img-container img { width: 100%; display: block; }
+
+        /* --- MAPA --- */
+        #mapa { width: 100%; height: 350px; filter: grayscale(100%) invert(90%) contrast(90%); border-top: 2px solid var(--gold); }
+
+        /* --- WHATSAPP FLOTANTE --- */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+        .whatsapp-btn:hover { transform: scale(1.1); }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .nav-links { display: none; } /* En un sitio real aquí pondríamos un menú hamburguesa */
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="brand">REINO ALFA</div>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#menu">Menú</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <section id="inicio" class="hero">
+        <img src="TABERNA.jpg" alt="Logo Reino Alfa">
+        <p>Experiencia rústica, sabor legendario. Alitas, hamburguesas y el mejor ambiente de la zona.</p>
+        <a href="#menu" class="btn">Explorar Menú</a>
+    </section>
+
+    <section class="info-grid">
+        <div class="info-card">
+            <i class="fas fa-clock"></i>
+            <h3>Horarios</h3>
+            <p>Jueves a Domingo<br>5:00 PM - 2:00 AM</p>
+        </div>
+        <div class="info-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>Ubicación</h3>
+            <p>Av. Oaxaca 30 y 31<br>San Luis Río Colorado, Son.</p>
+        </div>
+        <div class="info-card">
+            <i class="fas fa-beer-mug-empty"></i>
+            <h3>Concepto</h3>
+            <p>Taberna & Grill<br>Cenas y Tragos</p>
+        </div>
+    </section>
+
+    <section id="menu" class="menu-section">
+        <h2>Nuestro Menú</h2>
+        <br>
+        <div class="menu-img-container">
+            <img src="image_411985.png" alt="Menú Reino Alfa">
+        </div>
+    </section>
+
+    <section id="contacto">
+        <div style="text-align: center; padding: 40px;">
+            <h2>Encuéntranos</h2>
+            <p>Av. Oaxaca 30 y 31</p>
+        </div>
+        <iframe id="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3356.4567!2d-114.77!3d32.4!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzLCsDI0JzAwLjAiTiAxMTTCsDQ2JzEyLjAiVw!5e0!3m2!1ses!2smx!4v1620000000000" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+
+    <footer style="text-align: center; padding: 50px; background: #080a09; color: gray;">
+        <p>© 2024 Reino Alfa Taberna. Todos los derechos reservados.</p>
+    </footer>
+
+    <a href="https://wa.me/521234567890?text=Hola!%20Me%20gustaría%20hacer%20una%20reservación" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
